@@ -15,4 +15,5 @@ steps:
     - '--filename=monitor-depl.yaml'
     - '--location=us-central1'
     - '--cluster=monitor-cluster'
-logsBucket: 'gs://your-logs-bucket'
+options:
+  logging: CLOUD_LOGGING_ONLY
