@@ -1,11 +1,18 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/monitor-426815/monitor-app/monitor:v2', '.']
+  args: 
+    - 'build'
+    - '-t'
+    - 'us-central1-docker.pkg.dev/monitor-426815/monitor-app/monitor:v2'
+    - '.'
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/monitor-426815/monitor-app/monitor:v2']
+  args: 
+    - 'push'
+    - 'us-central1-docker.pkg.dev/monitor-426815/monitor-app/monitor:v2'
 - name: 'gcr.io/cloud-builders/gke-deploy'
   args:
-    - run
-    - --filename=monitor-depl.yaml
-    - --location=us-central1
-    - --cluster=monitor-cluster
+    - 'run'
+    - '--filename=monitor-depl.yaml'
+    - '--location=us-central1'
+    - '--cluster=monitor-cluster'
+logsBucket: 'gs://your-logs-bucket'
