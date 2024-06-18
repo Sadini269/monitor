@@ -5,7 +5,7 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/monitor-426815/monitor-app/monitor:v2']
 - name: 'gcr.io/cloud-builders/gke-deploy'
   args:
-  - run:
-  - --filename=monitor-depl.yaml
-  - --location=us-central1
-  - --cluster=monitor-cluster
+    - run
+    - --filename=monitor-depl.yaml
+    - --location=us-central1
+    - --cluster=monitor-cluster
