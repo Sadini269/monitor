@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitor-depl
+spec:
+  selector:
+    matchLabels:
+      app: react-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app
+        image: nishan1996/monitor
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: monitor-srv
+spec:
+  type: NodePort
+  selector:
+    app: react-app
+  ports:
+  - name: my-app
+    port: 3000
+    targetPort: 3000
+
