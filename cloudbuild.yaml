@@ -5,7 +5,7 @@ steps:
   args: ['push', 'https://github.com/Sadini269/monitor/']
 - name: 'gcr.io/cloud-builders/gke-deploy'
   args:
-- run:
-- --filename=monitor-depl.yaml
-- --location=us-central1
-- --cluster=monitor-cluster
+  - run:
+  - --filename=monitor-depl.yaml
+  - --location=us-central1
+  - --cluster=monitor-cluster
