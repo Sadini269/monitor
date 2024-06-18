@@ -16,4 +16,4 @@ steps:
     - '--location=us-central1'
     - '--cluster=monitor-cluster'
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: NONE
