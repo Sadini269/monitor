@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/monitor-app/monitor:v2', '.']
+  args: ['build', '-t', 'https://github.com/Sadini269/monitor/', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/monitor-app/monitor:v2']
+  args: ['push', 'https://github.com/Sadini269/monitor/']
 - name: 'gcr.io/cloud-builders/gke-deploy'
   args:
 - run:
